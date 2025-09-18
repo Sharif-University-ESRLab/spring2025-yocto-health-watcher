@@ -1,65 +1,61 @@
+![img_1.png](img_1.png)
 
-![Logo](https://via.placeholder.com/600x150?text=Your+Logo+Here+600x150)
+# Yocto Health Watcher
 
-
-# Project Title
-
-A brief description of what this project does and who it's for comes here.
-
+Yocto Health Watcher is a monitoring system for Yocto-based Raspberry Pi boards. It detects errors via the UART
+interface and checks the aliveness of the main board.
 
 ## Tools
-In this section, you should mention the hardware or simulators utilized in your project.
-- Qemu
-- Gem5
-- ESP32
-- Raspberry Pi 3B
-- Temperature Sensor
 
+- Two Raspberry Pi 3B boards running Yocto OS
+- Go programming language for the watcher application
 
 ## Implementation Details
 
-In this section, you will explain how you completed your project. It is recommended to use pictures to demonstrate your system model and implementation.
+![img_2.png](img_2.jpg)
 
+This project involves building a Yocto OS image and running it on two Raspberry Pi boards:
 
-Feel free to use sub-topics for your projects. If your project consists of multiple parts (e.g. server, client, and embedded device), create a separate topic for each one.
+- **Main Board**: The primary board that runs your target application.
+- **Watcher Board**: Monitors the main board via UART and logs errors.
+
+We developed a Go program called `raspberry-pi-uart-watcher`, which is deployed on the watcher board. The program
+continuously monitors logs from the main board through the UART interface and checks for both kernel errors and
+keep-alive messages.
 
 ## How to Run
 
-In this part, you should provide instructions on how to run your project. Also if your project requires any prerequisites, mention them. 
+To deploy the watcher, follow the instructions in the [README.md](Code/Readme.md).
+In brief:
 
-#### Examples:
-#### Build Project
-Your text comes here
-```bash
-  build --platform=OvmfPkg/OvmfPkgX64.dsc --arch=X64 --buildtarget=RELEASE --tagname=GCC5
+- Set the IP address of your Raspberry Pi in the Makefile.
+- Run the following command:
+
+```shell
+  make deploy
 ```
 
-#### Run server
-Your text comes here
-```bash
-  pyhton server.py -p 8080
-```
+The watcher will start monitoring the main board automatically.
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `-p` | `int` | **Required**. Server port |
-
-
+You can test the system by simulating a crash on the main board. The watcher will log errors and display them on the UI
+panel.
 
 ## Results
-In this section, you should present your results and provide an explanation for them.
 
-Using image is required.
+If the main board crashes or fails to send keep-alive messages, the watcher logs the events in the errors file and
+displays them in the UI panel. Kernel errors are also detected and reported in real time.
+
+![img.png](img.png)
 
 ## Related Links
-Some links related to your project come here.
- - [EDK II](https://github.com/tianocore/edk2)
- - [ESP32 Pinout](https://randomnerdtutorials.com/esp32-pinout-reference-gpios/)
- - [Django Doc](https://docs.djangoproject.com/en/5.0/)
 
+- [Yocto Project](https://www.yoctoproject.org/)
 
 ## Authors
+
 Authors and their github link come here.
-- [@Author1](https://github.com/Sharif-University-ESRLab)
-- [@Author2](https://github.com/Sharif-University-ESRLab)
+
+- [@satayyeb](https://github.com/satayyeb)
+- [@satayyeb](https://github.com/satayyeb)
+- [@satayyeb](https://github.com/satayyeb)
 
