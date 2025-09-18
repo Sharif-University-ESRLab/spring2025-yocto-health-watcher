@@ -25,7 +25,7 @@ keep-alive messages.
 
 ## How to Run
 
-To deploy the watcher, follow the instructions in the [README.md](Code/Readme.md).
+To deploy the watcher, follow the instructions in the [README.md](https://github.com/Sharif-University-ESRLab/spring2025-yocto-health-watcher/tree/main/Code).
 In brief:
 
 - Set the IP address of your Raspberry Pi in the Makefile.
