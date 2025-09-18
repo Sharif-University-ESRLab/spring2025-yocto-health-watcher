@@ -19,13 +19,13 @@ This project involves building a Yocto OS image and running it on two Raspberry 
 - **Main Board**: The primary board that runs your target application.
 - **Watcher Board**: Monitors the main board via UART and logs errors.
 
-We developed a Go program called [raspberry-pi-uart-watcher](Code/uart-watcher), which is deployed on the watcher board. The program
+We developed a Go program called [raspberry-pi-uart-watcher](Code/), which is deployed on the watcher board. The program
 continuously monitors logs from the main board through the UART interface and checks for both kernel errors and
 keep-alive messages.
 
 ## How to Run
 
-To deploy the watcher, follow the instructions in the [README.md](https://github.com/Sharif-University-ESRLab/spring2025-yocto-health-watcher/tree/main/Code).
+To deploy the watcher, follow the instructions in the [README.md](Code/).
 In brief:
 
 - Set the IP address of your Raspberry Pi in the Makefile.
