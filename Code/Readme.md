@@ -1,20 +1,35 @@
 
 # Code
 
-Please upload your final codes to this folder.
 
-If your project consists of multiple parts (e.g. server, client, and embedded device), create a separate folder for each one.
+## Raspberry Pi UART Watcher
 
 
-Please edit this *readme* file and give brief description of each part.
+**Overview:**
 
-**Example:**
+`raspberry-pi-uart-watcher` is a lightweight utility designed for Raspberry Pi systems to monitor and detect error logs originating from the UART interface. It continuously listens to UART communications and identifies any anomalies or errors, providing real-time alerts for prompt attention.
 
-## Server
-Server implemeted using `Django`.
+**Key Features:**
 
-## Client
-Pure `HTML`, `CSS`& `JS` is used for user interface.
+* **Real-Time Error Detection:** Monitors UART traffic and identifies error logs as they occur.
+* **Web Interface:** Access error logs via a simple web interface by navigating to the Raspberry Pi's IP address in a browser.
+* **Easy Deployment:** Deploy the application with a single command using the provided `Makefile`.
 
-## ESP32
-ESP32 is prgorammed using `C++` in `Arduino IDE`. 
+**Installation & Usage:**
+
+1. Customize network environment variables in the `Makefile`.
+
+2. Deploy the application by running:
+
+   ```bash
+   make deploy
+   ```
+
+3. View error logs by executing:
+
+   ```bash
+   make errors
+   ```
+
+   Alternatively, open your Raspberry Pi's IP address in a web browser to access the logs.
+
