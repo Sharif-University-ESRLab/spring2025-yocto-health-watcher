@@ -55,7 +55,7 @@ displays them in the UI panel. Kernel errors are also detected and reported in r
 
 Authors and their github link come here.
 
+- [@ahjafar](https://github.com/ahjafar)
 - [@satayyeb](https://github.com/satayyeb)
-- [@satayyeb](https://github.com/satayyeb)
-- [@satayyeb](https://github.com/satayyeb)
+- [@ehsan_naderi](https://github.com/ehsan_naderi)
 
