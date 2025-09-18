@@ -1,0 +1,3 @@
+[submodule "Code/uart-watcher"]
+	path = Code/uart-watcher
+	url = git@github.com:satayyeb/raspberry-pi-uart-watcher.git
