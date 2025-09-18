@@ -1,38 +1,45 @@
-
 # Code
-
 
 ## Raspberry Pi UART Watcher
 
-
 ### Overview:
 
-`raspberry-pi-uart-watcher` is a lightweight utility designed for Raspberry Pi systems to monitor and detect error logs originating from the UART interface. It continuously listens to UART communications and identifies any anomalies or errors, providing real-time alerts for prompt attention.
+`raspberry-pi-uart-watcher` is a lightweight utility designed for Raspberry Pi systems to monitor and detect error logs
+originating from the UART interface. It continuously listens to UART communications and identifies any anomalies or
+errors, providing real-time alerts for prompt attention.
 
 ### Key Features:
 
 * **Real-Time Error Detection:** Monitors UART traffic and identifies error logs as they occur.
-* **Web Interface:** Access error logs via a simple web interface by navigating to the Raspberry Pi's IP address in a browser.
+* **Web Interface:** Access error logs via a simple web interface by navigating to the Raspberry Pi's IP address in a
+  browser.
 * **Easy Deployment:** Deploy the application with a single command using the provided `Makefile`.
 
 ### code description:
 
 #### 1- `main.go` – UART Monitoring Logic
 
-The `main.go` file is responsible for initializing and managing the UART interface on the Raspberry Pi. Key functionalities include:
+![img_1.png](img_1.png)
+
+The `main.go` file is responsible for initializing and managing the UART interface on the Raspberry Pi. Key
+functionalities include:
 
 * **UART Initialization**: Configures the UART interface for communication.
 * **Data Capture**: Continuously reads incoming data from the UART interface.
 * **Error Detection**: Analyzes the incoming data for any anomalies or errors.
 * **Logging**: Records the captured data and detected errors for further analysis.
 
-This file is essential for the core functionality of the UART watcher, ensuring that all incoming data is monitored and logged appropriately.
+This file is essential for the core functionality of the UART watcher, ensuring that all incoming data is monitored and
+logged appropriately.
 
 ---
 
 #### 2- `http.go` – Web Interface for Monitoring
 
-The `http.go` file sets up a web server that provides a user-friendly interface for monitoring the captured UART data and logs. Key features include:
+![img.png](img.png)
+
+The `http.go` file sets up a web server that provides a user-friendly interface for monitoring the captured UART data
+and logs. Key features include:
 
 * **Web Server Initialization**: Starts an HTTP server to serve the monitoring interface.
 * **Data Display**: Presents the captured data and detected errors in a readable format.
